@@ -9,7 +9,7 @@ A simple to-do list web app built using Django. Users can add, edit, mark comple
 - Add new tasks  
 - Edit tasks  
 - Delete tasks  
-- (Optional) User login/logout support
+- User login/logout support
 
 ---
 
