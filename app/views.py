@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from . models import todo as TodoModel
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def home(requests):
     return render(requests,'home.html')
@@ -35,7 +36,7 @@ def signup(requests):
         return redirect('/login')
     return render(requests,'signup.html')
     
-
+@login_required(login_url='login')
 def todo(requests):
     if requests.POST:
         task=requests.POST.get('task')
@@ -47,6 +48,7 @@ def todo(requests):
     return render(requests,'todo.html',{"tasks":tasks})
 
 
+@login_required(login_url='login')
 def edit(requests,srno):
     task=TodoModel.objects.get(user=requests.user,srno=srno)
     if requests.POST:
@@ -58,6 +60,7 @@ def edit(requests,srno):
 
     return render(requests,'edit.html',{'task':task})
 
+@login_required(login_url='login')
 def delete(requests,srno):
     task=TodoModel.objects.get(user=requests.user,srno=srno)
     task.delete()
