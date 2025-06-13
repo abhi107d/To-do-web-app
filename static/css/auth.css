@@ -1,0 +1,128 @@
+/* Apply to body for center alignment and basic font */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style for the form container */
+#bord {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+/* Paragraph labels */
+#bord p {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+/* Inputs styling */
+#bord input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+/* Submit button styling */
+#bord button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#bord button:hover {
+    background-color: #45a049;
+}
+
+/* Login link */
+#bord a {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+#bord a:hover {
+    text-decoration: underline;
+}
+.msg {
+    text-align: center;
+    color: orange;
+    margin-bottom: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.error-msg {
+    text-align: center;
+    color: red;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.task {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task:hover {
+    transform: translateY(-3px);
+}
+
+.task-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.task-date {
+    font-size: 13px;
+    color: #888;
+}
+.task-actions a:hover i {
+    color: #00d5ff;
+}
+
+.task-container {
+    max-height: 400px; /* or whatever fits your design */
+    overflow-y: auto;
+    padding-right: 10px; /* space for scrollbar */
+}
+
+
+.task-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.task-container::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+}

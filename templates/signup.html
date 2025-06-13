@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}">
+{% endblock css %}
+{% block content %}
+
+<div id="bord">
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <p>Username</p>
+            <input type="text" name="username">
+             <p>Email</p>
+            <input type="text" name="email">
+             <p>Password</p>
+            <input type="password" name="password" id="pass">
+            <div style="margin-top: 15px;"></div>
+            <button type="submit">Sign up</button>
+            <br>
+            <a href="{% url 'login' %}">login</a> 
+            {% if error %}
+                <div class="error-msg">
+                    <p>{{ error }}</p>
+                </div>
+            {% endif %}
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock content %}

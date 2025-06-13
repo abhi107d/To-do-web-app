@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}">
+{% endblock css %}
+{% block content %}
+
+<div id="bord">
+    <div class="msg">
+        <div>
+        <h4><b>User: {{request.user.username}}</b></h4>
+        </div>
+        <div  class="task-actions">
+        <a href="{% url 'logout'  %}"><i class="fa-solid fa-right-from-bracket"></i></i></a>
+        </div>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="task" placeholder="Type task to do"/>
+        <button type="submit">Add Task</button>
+
+    </form>
+   <div class="task-container">
+        {% for task in tasks %}
+            <div class="task">
+            <div>
+                <p class="task-title">{{ task.title }}</p>
+                <small class="task-date">{{ task.date }}</small>
+            </div>
+            <div class="task-actions">
+                <a href="{% url 'edit' task.srno %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="{% url 'delete' task.srno %}"><i class="fa-solid fa-trash"></i></a>
+            </div>
+            </div>
+        {% endfor %}
+   </div> 
+
+</div>
+
+{% endblock content %}

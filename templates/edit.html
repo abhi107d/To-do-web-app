@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}">
+{% endblock css %}
+{% block content %}
+
+<div id="bord">
+    <div class="msg">
+        <h4><b>User: {{request.user.username}}</b></h4>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="edit" placeholder="Edit"/>
+        <button type="Submit">Edit Task</button>
+
+    </form>
+   <div class="task-container">
+        <div class="task">
+            <div>
+                <p class="task-title">{{ task.title }}</p>
+                <small class="task-date">{{ task.date }}</small>
+            </div>
+        </div>
+   </div> 
+
+</div>
+
+{% endblock content %}
