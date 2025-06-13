@@ -28,7 +28,7 @@ git clone https://github.com/yourusername/todo-django-app.git
 cd todo-django-app
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install -r requirements.txt
+pip pip install Django
 python manage.py migrate
 python manage.py runserver
 ```
